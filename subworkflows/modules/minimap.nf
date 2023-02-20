@@ -94,7 +94,6 @@ process Minimap2AlignAdaptiveParameterized{
 process Minimap2Index{
     // publishDir "${params.output_dir}/${task.process.replaceAll(':', '/')}", pattern: "", mode: 'copy'
     label 'few_memory_intensive'
-    container 'damicyclomics/cyclomicseq:0.7.2'
     
      input:
         path(reference_genome)

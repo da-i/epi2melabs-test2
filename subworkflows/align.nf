@@ -42,7 +42,6 @@ include {
 process Reference_info {
     publishDir "${params.output_dir}/QC", mode: 'copy'
     label 'many_cpu_medium'
-    container 'damicyclomics/cyclomicseq:0.7.2'
 
     input:
         path fasta
