@@ -28,7 +28,7 @@
             "properties": {
                 "reference": {
                     "type": "string",
-                    "format": "path",
+                    "format": "file-path",
                     "default": null
                 },
                 "input_read_dir": {
