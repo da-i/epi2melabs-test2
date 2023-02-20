@@ -1,0 +1,141 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/cyclomics/cyclomicsseq/master/nextflow_schema.json",
+    "title": "cyclomics/cyclomicsseq pipeline parameters",
+    "description": "Collection of pipelines to process Cyclomics CyclomicSeq data.",
+    "type": "object",
+    "definitions": {
+        "output_options": {
+            "title": "output_options",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "output_dir": {
+                    "type": "string",
+                    "default": null
+                }
+            },
+            "required": [
+                "output_dir"
+            ]
+        },
+        "input_options": {
+            "title": "Input Options",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "reference": {
+                    "type": "string",
+                    "format": "path",
+                    "default": null
+                },
+                "input_read_dir": {
+                    "type": "string",
+                    "format": "path",
+                    "default": null
+                },
+                "backbone": {
+                    "type": "string",
+                    "default": "BB42"
+                },
+                "sequencing_quality_summary": {
+                    "type": "string",
+                    "default": null
+                },
+                "region_file": {
+                    "type": "string",
+                    "default": "auto"
+                },
+                "read_pattern": {
+                    "type": "string",
+                    "default": "{pass,fastq_pass}/**.{fq,fastq,fq.gz,fastq.gz}"
+                }
+            },
+            "required": [
+                "reference",
+                "input_read_dir"
+            ]
+        },
+        "new_group_5": {
+            "title": "New Group 5",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "qc": {
+                    "type": "string",
+                    "default": "simple"
+                },
+                "alignment": {
+                    "type": "string",
+                    "default": "bwamem"
+                },
+                "consensus_calling": {
+                    "type": "string",
+                    "default": "cycas"
+                },
+                "variant_calling": {
+                    "type": "string",
+                    "default": "validate"
+                },
+                "split_on_adapter": {
+                    "type": "string",
+                    "default": "yes"
+                },
+                "report": {
+                    "type": "string",
+                    "default": "yes"
+                },
+                "quick_results": {
+                    "type": "string",
+                    "default": null
+                }
+            }
+        },
+        "new_group_4": {
+            "title": "New Group 4",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "economy_mode": {
+                    "type": "string",
+                    "default": null
+                },
+                "user_conda_location": {
+                    "type": "string",
+                    "format": "path",
+                    "default": "/home/dami/Software/tmp/cyclomicsseq/environment.yml"
+                },
+                "backbone_name": {
+                    "type": "string",
+                    "default": null
+                },
+                "extra_haplotyping": {
+                    "type": "string",
+                    "default": "skip"
+                },
+                "min_repeat_count": {
+                    "type": "string",
+                    "default": "3"
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/output_options"
+        },
+        {
+            "$ref": "#/definitions/input_options"
+        },
+        {
+            "$ref": "#/definitions/new_group_5"
+        },
+        {
+            "$ref": "#/definitions/new_group_4"
+        }
+    ]
+}
