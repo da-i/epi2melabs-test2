@@ -1,0 +1,17 @@
+.nextflow*
+work/
+data/
+results/
+.DS_Store
+.vscode/
+testing/
+testing*
+*.pyc
+
+nextflow.config
+tidehunter_exec_test
+notebooks/*
+plots/*
+tmp/
+testrun*
+fullrun*
