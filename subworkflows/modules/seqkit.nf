@@ -37,6 +37,7 @@ process Extract5PrimeFasta {
 process MergeFasta {
     // publishDir "${params.output_dir}/${task.process.replaceAll(':', '/')}", pattern: "", mode: 'copy'
     label 'many_cpu_medium'
+    container 'damicyclomics/cyclomicseq:0.7.2'
 
     input:
         path fasta1
@@ -112,7 +113,8 @@ process CountFastqInfo{
 
 process FilterShortReads{
     label 'many_cpu_medium'
-
+    container 'damicyclomics/cyclomicseq:0.7.2'
+    
     input:
         path(fastq)
 
